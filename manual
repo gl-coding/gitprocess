@@ -1,0 +1,76 @@
+#!/bin/bash
+
+#add a file
+git add readme.txt
+
+git log
+git log --pretty=oneline
+
+#HEAD is the current copy, HEAD^ is pre copy, HEAD is pre pre copy
+git reset --hard HEAD^
+git reset --hard 1231234345
+
+#record the command everytime, you can get the commit id
+git reflog
+
+#.git is 版本库， master branch, the master point is HEAD
+
+#see the untracked file
+git status
+
+#查看工作区和版本库的区别
+git diff HEAD -- readme.txt
+
+#丢弃工作区的修改
+git checkout -- readme.txt
+
+#把暂存区的修改撤销掉，重新放回工作区
+git reset HEAD readme.txt
+
+#工作区删除
+rm file
+
+#版本库删除
+git rm file
+
+#版本库里恢复工作区误删文件
+git checkout -- test.txt
+
+#创建分支，并切换分支
+git checkout -b tmp
+
+#创建分支
+git branch dev
+
+#切换分支
+git checkout dev
+
+#查看分支
+git branch
+
+#合并dev分支到当前分支
+git merge dev
+
+#删除分支
+git branch -d tmp
+#强制删除
+git branch -D tmp
+
+#看分支合并图
+git log --graph
+
+#推送其他分支
+git push origin dev
+
+#查看远程库信息
+git remote
+#更详细的信息
+git remote -v
+
+#远程仓库的默认名称是orgin
+
+#创建远程origin的dev分支到本地
+git checkout -b dev origin/dev
+
+#把最新的提交从origin/dev抓下来，在本地合并，解决冲突，然后再推送
+git pull

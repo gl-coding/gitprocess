@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "back up vim environment"
+cd ~/
+zip -r vim.zip .vim .vimrc
+mv vim.zip gitpro
+
+echo "update the .glsysconfig dir..."
+cp ~/.glsysconfig ~/gitpro/ -r
+echo "update finished, you can git the project"

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#fetch source from the server, and name it tmp
+git fetch origin master:tmp
+
+#compare the current branch with the tmp fetch
+git diff tmp
+
+#merge the tmp branch and the current branch
+git merge tmp

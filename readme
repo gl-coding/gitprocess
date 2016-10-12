@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "clone to local"
+echo "add your file"
+echo "commit the change"
+echo "push the commit to the github"

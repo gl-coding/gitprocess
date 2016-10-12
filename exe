@@ -1,0 +1,6 @@
+#!/bin/bash
+
+./envgit
+./add
+./commit "$1"
+./push

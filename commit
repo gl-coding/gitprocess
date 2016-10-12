@@ -1,0 +1,5 @@
+#!/bin/bash
+
+log=$1
+
+git commit -m "$log"

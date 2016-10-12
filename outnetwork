@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#should execute this shell to surf the internet after restarting the server
+
+w3m 159.226.39.22
+
+#account
+#password

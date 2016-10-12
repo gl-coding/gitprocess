@@ -1,0 +1,46 @@
+#!/bin/bash
+
+if [ $# == 0 ];then
+    echo "Using this command you copy the files in the gitpro dir to you workspace"
+    echo "You may cover your own files, please be seriouse!"
+    echo ""
+    echo "all ------update the glsysconfig dir and the leetcode dir"
+    echo "let ------update the leetcode dir"
+    echo "sys ------update the glsysconfig dir"
+    echo "fir ------append .glsysconfig leetcode/.config gitpro to .bashrc file"
+#lc for leetcode
+elif [ $1 == "all" ];then
+    echo "update the glsysconfig dir and the leetcode dir"
+    cp ./.glsysconfig ~/ -r
+    cp ./leetcode ~/ -r
+    echo "export PATH=\$PATH:~/.glsysconfig" >> ~/.bashrc
+    echo "export PATH=\$PATH:~/gitpro/" >> ~/.bashrc
+    echo "export PATH=\$PATH:~/leetcode/.config" >> ~/.bashrc
+
+    echo "configure the vim"
+    cp ./vim.zip ~/
+    cd ~/
+    unzip vim.zip
+    rm vim.zip
+
+elif [ $1 == "let" ];then
+    echo "update the leetcode dir"
+    cp ./leetcode ~/ -r
+#sys for glsysconfig
+elif [ $1 == "vim" ];then
+    echo "configure the vim"
+    cp ./vim.zip ~/
+    cd ~/
+    unzip vim.zip
+    rm vim.zip
+elif [ $1 == "sys" ];then
+    echo "update the glsysconfig dir"
+    cp ./.glsysconfig ~/ -r
+elif [ $1 == "fir" ];then
+    echo "config the env for the first time"
+    echo "export PATH=\$PATH:~/.glsysconfig" >> ~/.bashrc
+    echo "export PATH=\$PATH:~/gitpro/" >> ~/.bashrc
+    echo "export PATH=\$PATH:~/leetcode/.config" >> ~/.bashrc
+else
+    echo "no option, please select available option"
+fi

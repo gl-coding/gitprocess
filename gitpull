@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#this command equals "git fetch and git merge", in practice "git fetch" is more safe.
+#Because we can get the update information and then decide wether to merge the remote with local
+git pull origin master
